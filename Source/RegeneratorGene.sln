@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegeneratorGene", "RegeneratorGene.csproj", "{2ACDFCFE-D957-4F58-9980-CC417D881BAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ACDFCFE-D957-4F58-9980-CC417D881BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ACDFCFE-D957-4F58-9980-CC417D881BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ACDFCFE-D957-4F58-9980-CC417D881BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ACDFCFE-D957-4F58-9980-CC417D881BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {368C028F-CB14-4853-B9DB-75CC91997330}
+	EndGlobalSection
+EndGlobal

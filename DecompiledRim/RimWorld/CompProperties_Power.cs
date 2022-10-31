@@ -1,0 +1,63 @@
+using System.Collections.Generic;
+using Verse;
+
+namespace RimWorld
+{
+	public class CompProperties_Power : CompProperties
+	{
+		public class PowerUpgrade
+		{
+			public ResearchProjectDef researchProject;
+
+			public float factor;
+		}
+
+		public bool transmitsPower;
+
+		private float basePowerConsumption;
+
+		public bool shortCircuitInRain;
+
+		public bool showPowerNeededIfOff = true;
+
+		public SoundDef soundPowerOn;
+
+		public SoundDef soundPowerOff;
+
+		public SoundDef soundAmbientPowered;
+
+		public SoundDef soundAmbientProducingPower;
+
+		public List<PowerUpgrade> powerUpgrades;
+
+		public bool alwaysDisplayAsUsingPower;
+
+		public float PowerConsumption
+		{
+			get
+			{
+				float num = basePowerConsumption;
+				for (int i = 0; i < powerUpgrades?.Count; i++)
+				{
+					if (powerUpgrades[i].researchProject?.IsFinished ?? false)
+					{
+						num *= powerUpgrades[i].factor;
+					}
+				}
+				return num;
+			}
+		}
+
+		public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
+		{
+			foreach (StatDrawEntry item in base.SpecialDisplayStats(req))
+			{
+				yield return item;
+			}
+			if (basePowerConsumption > 0f)
+			{
+				yield return new StatDrawEntry(StatCategoryDefOf.Building, "PowerConsumption".Translate(), PowerConsumption.ToString("F0") + " W", "Stat_Thing_PowerConsumption_Desc".Translate(), 5000);
+			}
+		}
+	}
+}
