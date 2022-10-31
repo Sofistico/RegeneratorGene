@@ -3,7 +3,7 @@
     <defName>GeneRegeneration</defName>
     <label>regeneration</label>
     <labelShortAdj>regenerator</labelShortAdj>
-    <description>Carriers of this gene have a special type of stem cells that enables the body to recover any lost part.</description>
+    <description>Carriers of this gene have a special type of archites that function like stem cells on steroids, which enables the body to recover any lost part.</description>
     <customEffectDescriptions>
       <li>Every lost or destroyed body part is restored gradually in a rate of one per day.</li>
     </customEffectDescriptions>
