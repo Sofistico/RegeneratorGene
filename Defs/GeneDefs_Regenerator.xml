@@ -14,4 +14,37 @@
     <biostatArc>1</biostatArc>
     <displayCategory>Archite</displayCategory>
   </GeneDef>
+  
+  <GeneDef>
+    <defName>GeneHemogenRegen</defName>
+    <label>vampiric regeneration</label>
+    <labelShortAdj>vampiric heal</labelShortAdj>
+    <description>Carriers of this gene have a special hemogen containing organ that contains special archites that allows the carrier to regenerate lost limbs fast, as well as provide the carrier a way to consume more hemogen for a faster regeneration in moments of stress.</description>
+    <iconPath>UI/Icons/Genes/Gene_TotalHealing</iconPath>
+    <prerequisite>Hemogenic</prerequisite>
+    <displayCategory>Archite</displayCategory>
+	<geneClass>RegeneratorGene.Gene_HemogenRegen</geneClass>
+    <abilities>
+      <li>HemogenRegenerate</li>
+    </abilities>
+	<customEffectDescriptions>
+      <li>Every lost or destroyed body part is restored gradually in a rate of one per hour!</li>
+      <li>Provides the use of a regenerative ability!</li>
+    </customEffectDescriptions>
+    <descriptionHyperlinks>
+      <AbilityDef>HemogenRegenerate</AbilityDef>
+    </descriptionHyperlinks>
+    <biostatMet>0</biostatMet>
+	<biostatCpx>4</biostatCpx>
+    <biostatArc>1</biostatArc>
+    <minAgeActive>3</minAgeActive>
+	<resourceLossPerDay>0.05</resourceLossPerDay>
+    <symbolPack>
+      <suffixSymbols>
+        <li><symbol>life</symbol></li>
+        <li><symbol>regen</symbol></li>
+        <li><symbol>bloodheal</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
 </Defs>

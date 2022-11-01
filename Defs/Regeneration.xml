@@ -11,9 +11,47 @@
 		</injuryProps>
 		<comps>
 		      <li Class="HediffCompProperties_SeverityPerDay">
-					<severityPerDay>-4</severityPerDay>
-					<showHoursToRecover>true</showHoursToRecover>
+				<severityPerDay>-4</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
 			</li>
 		</comps>
 	</HediffDef>
+	<HediffDef ParentName="InjuryBase">
+		<defName>Sofis_Hemogen_Regenerating</defName>
+		<label>regenerating</label>
+		<description>Regenerating lost limbs.</description>
+		<tendable>false</tendable>
+		<injuryProps>
+			<painPerSeverity>0</painPerSeverity>
+			<canMerge>false</canMerge>
+			<destroyedLabel>Destroyed</destroyedLabel>
+		</injuryProps>
+		<comps>
+		      <li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-10</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef ParentName="InjuryBase">
+		<defName>Sofis_Hemogen_Regenerating_Active</defName>
+		<label>regenerating</label>
+		<description>Regenerating lost limbs and closing wounds super fast.</description>
+		<tendable>false</tendable>
+		<injuryProps>
+			<painPerSeverity>0</painPerSeverity>
+			<canMerge>false</canMerge>
+			<destroyedLabel>Destroyed</destroyedLabel>
+		</injuryProps>
+		<comps>
+		      <li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-10</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+
 </Defs>
