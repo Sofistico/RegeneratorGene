@@ -5,7 +5,7 @@ using Verse;
 
 namespace RegeneratorGene
 {
-    public class CompAbilityEffect_HemogenicRegen : CompAbilityEffect
+    /*public class CompAbilityEffect_HemogenicRegen : CompAbilityEffect
     {
         private new CompProperties_AbilityHemogenicRegen Props => (CompProperties_AbilityHemogenicRegen)props;
 
@@ -47,5 +47,5 @@ namespace RegeneratorGene
             }
             return base.Valid(target, throwMessages);
         }
-    }
+    }*/
 }

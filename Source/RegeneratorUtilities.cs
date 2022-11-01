@@ -59,7 +59,7 @@ namespace RegeneratorGene
 
                 if (hediff.def == hediffToAdd)
                 {
-                    hediff.Severity += 1f / 180000f;
+                    hediff.Severity += 0.10f;
                     if (hediff.Severity >= 1f) toRemove.Add(hediff);
                 }
             }
@@ -69,7 +69,7 @@ namespace RegeneratorGene
             foreach (var hediff in toAdd) pawn.health.AddHediff(hediff);
         }
 
-        public static bool TryRegenAllLimbsHemogenRecovery(Pawn pawn, HediffDef hediffToAdd)
+        /*public static bool TryRegenAllLimbsHemogenRecovery(Pawn pawn, HediffDef hediffToAdd)
         {
             // will only regenerate one limb per day!
             bool healedOnce = false;
@@ -90,7 +90,7 @@ namespace RegeneratorGene
             }
 
             return healedOnce;
-        }
+        }*/
 
         private static List<BodyPartRecord> GetAllLostBp(Pawn pawn)
         {

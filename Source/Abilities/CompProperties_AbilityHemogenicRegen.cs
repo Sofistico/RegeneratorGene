@@ -3,7 +3,7 @@ using Verse;
 
 namespace RegeneratorGene
 {
-    public class CompProperties_AbilityHemogenicRegen : CompProperties_AbilityEffect
+    /*public class CompProperties_AbilityHemogenicRegen : CompProperties_AbilityEffect
     {
         public FloatRange tendQualityRange;
 
@@ -11,5 +11,5 @@ namespace RegeneratorGene
         {
             compClass = typeof(CompAbilityEffect_HemogenicRegen);
         }
-    }
+    }*/
 }

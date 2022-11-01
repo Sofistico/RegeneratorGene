@@ -8,7 +8,7 @@ using Verse;
 
 namespace RegeneratorGene
 {
-    public class Gene_HemogenRegen : Gene
+    /*public class Gene_HemogenRegen : Gene
     {
         public override void Tick()
         {
@@ -22,5 +22,5 @@ namespace RegeneratorGene
                 }
             }
         }
-    }
+    }*/
 }
