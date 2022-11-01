@@ -69,7 +69,6 @@ namespace RegeneratorGene
             foreach (var hediff in toAdd) pawn.health.AddHediff(hediff);
         }
 
-
         public static bool TryRegenAllLimbsHemogenRecovery(Pawn pawn, HediffDef hediffToAdd)
         {
             // will only regenerate one limb per day!
@@ -111,7 +110,7 @@ namespace RegeneratorGene
             Hediff regeneratingHediff = HediffMaker.MakeHediff(hediffToAdd,
                                     pawn,
                                     removedMissingPartHediff.Part);
-            if(!instaHeal)
+            if (!instaHeal)
                 regeneratingHediff.Severity = removedMissingPartHediff.Part.def.GetMaxHealth(pawn) - 1;
             else
                 regeneratingHediff.Severity = removedMissingPartHediff.Part.def.GetMaxHealth(pawn);
