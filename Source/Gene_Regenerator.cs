@@ -12,11 +12,12 @@ namespace RegeneratorGene
             base.Tick();
             if (Find.TickManager.TicksGame % GenDate.TicksPerDay == 0)
             {
-                bool healedOnce = RegeneratorUtilities.TryRegenLimbOnce(pawn, Regen_DefOf.Sofis_Regenerating);
-                if (healedOnce)
-                {
-                    FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.HealingCross);
-                }
+                // shoud be a more natural way of regenerating the limbs!
+                RegeneratorUtilities.NaturalRegenerationOfLimbs(pawn, Regen_DefOf.Sofis_Regenerating);
+                //if (healedOnce)
+                //{
+                //    FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.HealingCross);
+                //}
             }
         }
     }

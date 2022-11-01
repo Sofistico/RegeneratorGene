@@ -1,21 +1,64 @@
 <Defs>
-	<HediffDef ParentName="InjuryBase">
+	<HediffDef>
 		<defName>Sofis_Regenerating</defName>
+		<defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
+		<description>This body part is regenerating.</description>
+		<isBad>false</isBad>
 		<label>regenerating</label>
-		<description>Regenerating lost limbs.</description>
-		<tendable>false</tendable>
-		<injuryProps>
-			<painPerSeverity>0</painPerSeverity>
-			<canMerge>false</canMerge>
-			<destroyedLabel>Destroyed</destroyedLabel>
-		</injuryProps>
-		<comps>
-		      <li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-4</severityPerDay>
-				<showHoursToRecover>true</showHoursToRecover>
+		<maxSeverity>1</maxSeverity>
+		<stages>
+			<li>
+				<label>bones</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>-1.0</partEfficiencyOffset>
+				<painOffset>0.2</painOffset>
+				<statOffsets>
+					<PawnBeauty>-2</PawnBeauty>
+				</statOffsets>
 			</li>
-		</comps>
+			<li>
+				<label>muscles</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>-1.0</partEfficiencyOffset>
+				<minSeverity>0.1</minSeverity>
+				<painOffset>0.2</painOffset>
+				<statOffsets>
+					<PawnBeauty>-2</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<label>nerves</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>-0.75</partEfficiencyOffset>
+				<minSeverity>0.5</minSeverity>
+				<painOffset>0.5</painOffset>
+				<statOffsets>
+					<PawnBeauty>-2</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<label>skin</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>-0.5</partEfficiencyOffset>
+				<minSeverity>0.75</minSeverity>
+				<painOffset>0.1</painOffset>
+				<statOffsets>
+					<PawnBeauty>-1</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<label>finishing</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>0</partEfficiencyOffset>
+				<minSeverity>1</minSeverity>
+				<painOffset>0.05</painOffset>
+				<statOffsets>
+					<PawnBeauty>-1</PawnBeauty>
+				</statOffsets>
+			</li>
+		</stages>
 	</HediffDef>
+
 	<HediffDef ParentName="InjuryBase">
 		<defName>Sofis_Hemogen_Regenerating</defName>
 		<label>regenerating</label>
@@ -27,13 +70,13 @@
 			<destroyedLabel>Destroyed</destroyedLabel>
 		</injuryProps>
 		<comps>
-		      <li Class="HediffCompProperties_SeverityPerDay">
+			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-10</severityPerDay>
 				<showHoursToRecover>true</showHoursToRecover>
 			</li>
 		</comps>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="InjuryBase">
 		<defName>Sofis_Hemogen_Regenerating_Active</defName>
 		<label>regenerating</label>
@@ -45,13 +88,12 @@
 			<destroyedLabel>Destroyed</destroyedLabel>
 		</injuryProps>
 		<comps>
-		      <li Class="HediffCompProperties_SeverityPerDay">
+			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-10</severityPerDay>
 				<showHoursToRecover>true</showHoursToRecover>
 			</li>
 		</comps>
 	</HediffDef>
-
 
 
 </Defs>
