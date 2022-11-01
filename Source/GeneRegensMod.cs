@@ -9,7 +9,7 @@ using Verse;
 
 namespace RegeneratorGene
 {
-    public class GeneRegensMod : Mod
+    /*public class GeneRegensMod : Mod
     {
         public RegenSettings regenSettings;
 
@@ -36,5 +36,5 @@ namespace RegeneratorGene
 
         public RegenSettings GetSettings()
             => LoadedModManager.GetMod<GeneRegensMod>().GetSettings<RegenSettings>();
-    }
+    }*/
 }

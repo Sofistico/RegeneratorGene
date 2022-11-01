@@ -7,7 +7,7 @@ using Verse;
 
 namespace RegeneratorGene
 {
-    public class RegenSettings : ModSettings
+    /*public class RegenSettings : ModSettings
     {
         public bool doNotSpawnSanguaphobeWithNewGene;
 
@@ -17,5 +17,5 @@ namespace RegeneratorGene
                 "Makes so that a new Sanguaphobe doesn't spawn with the new gene");
             base.ExposeData();
         }
-    }
+    }*/
 }
