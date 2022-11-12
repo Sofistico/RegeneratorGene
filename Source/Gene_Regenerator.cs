@@ -10,7 +10,7 @@ namespace RegeneratorGene
         public override void Tick()
         {
             base.Tick();
-            if (Find.TickManager.TicksGame % GenDate.TicksPerDay == 0)
+            if (Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
             {
                 // shoud be a more natural way of regenerating the limbs!
                 RegeneratorUtilities.NaturalRegenerationOfLimbs(pawn, Regen_DefOf.Sofis_Regenerating);

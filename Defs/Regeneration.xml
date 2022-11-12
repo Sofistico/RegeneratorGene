@@ -11,7 +11,7 @@
 				<label>bones</label>
 				<becomeVisible>true</becomeVisible>
 				<partEfficiencyOffset>-1.0</partEfficiencyOffset>
-				<painOffset>0.2</painOffset>
+				<painOffset>0.05</painOffset>
 				<statOffsets>
 					<PawnBeauty>-2</PawnBeauty>
 				</statOffsets>
@@ -21,7 +21,7 @@
 				<becomeVisible>true</becomeVisible>
 				<partEfficiencyOffset>-1.0</partEfficiencyOffset>
 				<minSeverity>0.1</minSeverity>
-				<painOffset>0.2</painOffset>
+				<painOffset>0.1</painOffset>
 				<statOffsets>
 					<PawnBeauty>-2</PawnBeauty>
 				</statOffsets>
@@ -31,7 +31,7 @@
 				<becomeVisible>true</becomeVisible>
 				<partEfficiencyOffset>-0.75</partEfficiencyOffset>
 				<minSeverity>0.5</minSeverity>
-				<painOffset>0.5</painOffset>
+				<painOffset>0.25</painOffset>
 				<statOffsets>
 					<PawnBeauty>-2</PawnBeauty>
 				</statOffsets>
