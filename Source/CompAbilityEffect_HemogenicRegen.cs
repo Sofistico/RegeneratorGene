@@ -7,10 +7,18 @@ namespace RegeneratorGene
 {
     public class CompAbilityEffect_HemogenicRegen : CompAbilityEffect
     {
+        public new CompProperties_HemogenicRegen Props => (CompProperties_HemogenicRegen)props;
+
+        public CompAbilityEffect_HemogenicRegen() : base()
+        {
+            // empty constructor for activation
+        }
+
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);
             Pawn pawn = target.Pawn;
+            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Started", 3.65f);
             if (pawn == null)
             {
                 return;
@@ -25,6 +33,7 @@ namespace RegeneratorGene
                     num++;
                 }
             }
+            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Middle", 3.65f);
             if (num > 0)
             {
                 MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "NumWoundsTended".Translate(num), 3.65f);
@@ -34,11 +43,12 @@ namespace RegeneratorGene
 
             // shouldn't see anything!
             RegeneratorUtilities.TryRegenAllLimbs(pawn);
+            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "End", 3.65f);
         }
 
         public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
         {
-            Pawn pawn = parent.pawn;
+            Pawn pawn = target.Pawn;
             if (pawn != null)
             {
                 AbilityUtility.ValidateHasTendableWound(pawn, throwMessages, parent);

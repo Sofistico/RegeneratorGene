@@ -10,6 +10,11 @@ namespace RegeneratorGene
 {
     public class Gene_HemogenRegen : Gene
     {
+        public Gene_HemogenRegen()
+        {
+            // empty constructor
+        }
+
         public override void Tick()
         {
             base.Tick();

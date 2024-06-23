@@ -4,39 +4,41 @@
         <defName>Sanguophage</defName>
         <displayOrder>1000</displayOrder>
     </AbilityCategoryDef>
-    <AbilityDef ParentName="AbilityTouchBase">
+    <AbilityDef Name="HemogenRegenerate">
         <defName>HemogenRegenerate</defName>
         <label>Hemogen Regenerate</label>
-        <description>Use special glands in the body to quickly regenerate lost limbs and wounds.</description>
+		<targetRequired>False</targetRequired>
+		<description>Use special glands in the body to quickly regenerate lost limbs and wounds.</description>
         <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
         <stunTargetWhileCasting>true</stunTargetWhileCasting>
         <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
         <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
         <warmupMote>Mote_CoagulateStencil</warmupMote>
         <warmupStartSound>Coagulate_Cast</warmupStartSound>
-        <abilityClass>RegeneratorGene.CompAbilityEffect_HemogenicRegen</abilityClass>
         <jobDef>CastAbilityOnThingMelee</jobDef>
         <category>Sanguophage</category>
         <displayOrder>400</displayOrder>
         <hostile>false</hostile>
-        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <verbProperties>
-            <verbClass>Verb_CastAbilityTouch</verbClass>
-            <drawAimPie>false</drawAimPie>
-            <range>-1</range>
-            <warmupTime>1</warmupTime>
-            <targetParams>
-                <canTargetAnimals>false</canTargetAnimals>
-                <canTargetPawns>false</canTargetPawns>
-                <canTargetSelf>true</canTargetSelf>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetMechs>false</canTargetMechs>
-                <canTargetBloodfeeders>false</canTargetBloodfeeders>
-            </targetParams>
-        </verbProperties>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>0.5</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <comps>
             <li Class="CompProperties_AbilityHemogenCost">
                 <hemogenCost>0.5</hemogenCost>
+            </li>
+            <li Class="RegeneratorGene.CompProperties_HemogenicRegen">
             </li>
         </comps>
     </AbilityDef>

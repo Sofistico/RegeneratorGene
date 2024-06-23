@@ -50,7 +50,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abilities\CompAbilityEffect_HemogenicRegen.cs" />
+    <Compile Include="CompAbilityEffect_HemogenicRegen.cs" />
+    <Compile Include="CompProperties_HemogenicRegen.cs" />
     <Compile Include="GeneRegensMod.cs" />
     <Compile Include="Gene_HemogenRegen.cs" />
     <Compile Include="RegeneratorUtilities.cs" />
