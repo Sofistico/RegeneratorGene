@@ -6,24 +6,19 @@ namespace RegeneratorGene
 {
     public static class RegeneratorUtilities
     {
-        public static bool TryRegenLimbOnce(Pawn pawn, HediffDef hediffToAdd)
+        public static void TryRegenAllLimbs(Pawn pawn)
         {
-            // will only regenerate one limb per day!
-            bool healedOnce = false;
-
-            List<BodyPartRecord> missingBP = GetAllLostBp(pawn);
-
-            if (missingBP.Any())
+            foreach (var bp in GetAllLostBp(pawn))
             {
-                Hediff_MissingPart removedMissingPartHediff =
-                    GetAnyRemovedMissingPartAfterRegen(pawn, missingBP).FirstOrDefault();
-                if (removedMissingPartHediff != null)
+                var removedMissingPartHediff = GetAnyRemovedMissingPartAfterRegen(pawn, bp);
+                foreach (var item in removedMissingPartHediff)
                 {
-                    healedOnce = HealLimb(pawn, removedMissingPartHediff, hediffToAdd);
+                    if (removedMissingPartHediff != null)
+                    {
+                        HealLimb(pawn, item, Regen_DefOf.Sofis_Regenerating, true);
+                    }
                 }
             }
-
-            return healedOnce;
         }
 
         public static void NaturalRegenerationOfLimbs(Pawn pawn, HediffDef hediffToAdd)
@@ -38,6 +33,7 @@ namespace RegeneratorGene
                     var part = hediff.Part;
                     var flag = true;
                     while (part != null)
+                    {
                         if (pawn.health.hediffSet.hediffs.Any(hd => hd.Part == part && hd.def == hediffToAdd))
                         {
                             flag = false;
@@ -47,6 +43,7 @@ namespace RegeneratorGene
                         {
                             part = part.parent;
                         }
+                    }
 
                     if (flag)
                     {
@@ -106,7 +103,6 @@ namespace RegeneratorGene
             HediffDef hediffToAdd,
             bool instaHeal = false)
         {
-            bool healedOnce;
             Hediff regeneratingHediff = HediffMaker.MakeHediff(hediffToAdd,
                                     pawn,
                                     removedMissingPartHediff.Part);
@@ -116,8 +112,7 @@ namespace RegeneratorGene
                 regeneratingHediff.Severity = removedMissingPartHediff.Part.def.GetMaxHealth(pawn);
 
             pawn.health.AddHediff(regeneratingHediff);
-            healedOnce = true;
-            return healedOnce;
+            return true;
         }
 
         /// <summary>
@@ -129,6 +124,23 @@ namespace RegeneratorGene
         private static List<Hediff_MissingPart> GetAnyRemovedMissingPartAfterRegen(Pawn pawn, List<BodyPartRecord> missingBP)
         {
             var missingPart = missingBP.RandomElement();
+            var currentMissingHediffs = GetMissingsHediffs(pawn);
+            pawn.health.RestorePart(missingPart);
+            var currentMissingHediffs2 = GetMissingsHediffs(pawn);
+            var removedMissingPartHediff = currentMissingHediffs.Where(i
+                => !currentMissingHediffs2.Contains(i)).ToList();
+            return removedMissingPartHediff;
+        }
+
+        /// <summary>
+        /// Helper method to regen a missing limb and add the regenerating hediff
+        /// </summary>
+        /// <param name="pawn"></param>
+        /// <param name="missingBP"></param>
+        /// <returns></returns>
+        private static List<Hediff_MissingPart> GetAnyRemovedMissingPartAfterRegen(Pawn pawn, BodyPartRecord missingBP)
+        {
+            var missingPart = missingBP;
             var currentMissingHediffs = GetMissingsHediffs(pawn);
             pawn.health.RestorePart(missingPart);
             var currentMissingHediffs2 = GetMissingsHediffs(pawn);

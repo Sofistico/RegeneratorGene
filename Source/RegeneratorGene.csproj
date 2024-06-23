@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abilities\CompAbilityEffect_HemogenicRegen.cs" />
-    <Compile Include="Abilities\CompProperties_AbilityHemogenicRegen.cs" />
     <Compile Include="GeneRegensMod.cs" />
     <Compile Include="Gene_HemogenRegen.cs" />
     <Compile Include="RegeneratorUtilities.cs" />

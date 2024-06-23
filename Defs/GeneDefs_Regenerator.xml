@@ -3,7 +3,8 @@
     <defName>GeneRegeneration</defName>
     <label>regeneration</label>
     <labelShortAdj>regenerator</labelShortAdj>
-    <description>Carriers of this gene have a special type of archites that function like stem cells on steroids, which enables the body to recover any lost part.</description>
+    <description>Carriers of this gene have a special type of archites that function like stem cells
+      on steroids, which enables the body to recover any lost part.</description>
     <customEffectDescriptions>
       <li>Every lost or destroyed body part is restored gradually in a rate of one per day.</li>
     </customEffectDescriptions>
@@ -13,5 +14,40 @@
     <biostatCpx>4</biostatCpx>
     <biostatArc>1</biostatArc>
     <displayCategory>Archite</displayCategory>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>GeneHemogenRegen</defName>
+    <label>regenerate</label>
+    <labelShortAdj>regenerator</labelShortAdj>
+    <description>Carriers of this gene have a steam gland on their body, that when infused with
+      hemogen, causes rapid regeneration of the wounds on the body</description>
+    <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+    <prerequisite>Hemogenic</prerequisite>
+    <displayCategory>Hemogen</displayCategory>
+    <abilities>
+      <li>HemogenRegenerate</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>HemogenRegenerate</AbilityDef>
+    </descriptionHyperlinks>
+    <resourceLossPerDay>0.05</resourceLossPerDay>
+    <biostatMet>-1</biostatMet>
+	<geneClass>RegeneratorGene.Gene_HemogenRegen</geneClass>
+	  <preventPermanentWounds>true</preventPermanentWounds>
+    <minAgeActive>3</minAgeActive>
+    <symbolPack>
+      <suffixSymbols>
+        <li>
+          <symbol>life</symbol>
+        </li>
+        <li>
+          <symbol>clotter</symbol>
+        </li>
+        <li>
+          <symbol>tender</symbol>
+        </li>
+      </suffixSymbols>
+    </symbolPack>
   </GeneDef>
 </Defs>
